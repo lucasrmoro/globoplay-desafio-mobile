@@ -1,4 +1,4 @@
-package br.com.globoplay.ui.theme
+package br.com.globoplay.presentation.theme
 
 import android.app.Activity
 import android.os.Build
