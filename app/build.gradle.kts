@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -18,6 +20,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField(
+            "String",
+            "THE_MOVIE_DB_API_KEY",
+            "\"${gradleLocalProperties(rootDir).getProperty("the_movie_db_api_key")}\""
+        )
     }
 
     buildTypes {
@@ -47,6 +54,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -66,4 +76,25 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.8.1")
+
+    // Logging Interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    // Koin
+    implementation("io.insert-koin:koin-android:3.5.0")
+    implementation("io.insert-koin:koin-core-coroutines:3.5.0")
+    implementation("io.insert-koin:koin-androidx-compose:3.5.0")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.5")
+
+    // Compose Lifecycle
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }
