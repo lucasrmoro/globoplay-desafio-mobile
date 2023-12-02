@@ -15,8 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import br.com.globoplay.core.providers.DimensProvider
 import br.com.globoplay.presentation.streams.list.domain.model.GenreWithStreams
 
 @Composable
@@ -29,21 +28,21 @@ fun GenreWithStreamsCarousel(
 
     Column(modifier = modifier.fillMaxSize()) {
         Text(
-            modifier = Modifier.padding(start = 8.dp),
+            modifier = Modifier.padding(start = DimensProvider.TINY_DIMEN),
             text = content.genre.name,
             style = MaterialTheme.typography.headlineMedium.copy(
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = DimensProvider.DEFAULT_TEXT
             )
         )
 
-        Spacer(modifier = Modifier.size(8.dp))
+        Spacer(modifier = Modifier.size(DimensProvider.TINY_DIMEN))
 
         LazyRow(
             state = lazyListState,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(140.dp)
+                .height(DimensProvider.HUGEST_DIMEN)
         ) {
             items(items = content.streams) {
                 StreamCard(

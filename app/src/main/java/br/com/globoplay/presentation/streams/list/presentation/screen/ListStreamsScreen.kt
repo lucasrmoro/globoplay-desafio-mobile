@@ -10,10 +10,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import br.com.globoplay.core.providers.DimensProvider
 import br.com.globoplay.presentation.streams.list.presentation.widgets.GenreWithStreamsCarousel
 import br.com.globoplay.presentation.widgets.CommonAppScreen
 import org.koin.androidx.compose.koinViewModel
@@ -40,7 +40,7 @@ fun ListStreamsScreen(
                     content = it,
                     onNavigateToStreamDetails = onNavigateToStreamDetails,
                 )
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(DimensProvider.SMALL_DIMEN))
             }
         }
     }
