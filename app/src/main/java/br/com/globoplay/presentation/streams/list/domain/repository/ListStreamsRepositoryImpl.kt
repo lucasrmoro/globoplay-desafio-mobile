@@ -23,8 +23,7 @@ class ListStreamsRepositoryImpl(
                     genre = genreMapper.mapToDomainModel(genreDTO),
                     streams = streamMapper.mapToDomainModelList(streams.orEmpty())
                 )
-            }?.sortedByDescending { it.genre.name }.orEmpty()
+            }?.sortedBy { it.genre.name }.orEmpty()
         }
-
 
 }
