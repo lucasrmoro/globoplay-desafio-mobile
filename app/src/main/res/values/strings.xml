@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Globo Play</string>
+
+    <!-- Bottom Navigation Items -->
+    <string name="home">Home</string>
+    <string name="new_and_hot">New &amp; Hot</string>
+    <string name="my_profile">My Netflix</string>
+
 </resources>

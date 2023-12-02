@@ -3,8 +3,7 @@ package br.com.globoplay
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.navigation.compose.rememberNavController
-import br.com.globoplay.presentation.navigation.NavigationGraph
+import br.com.globoplay.presentation.MainScreen
 import br.com.globoplay.presentation.theme.GloboPlayTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             GloboPlayTheme {
-                NavigationGraph(navController = rememberNavController())
+                MainScreen()
             }
         }
     }

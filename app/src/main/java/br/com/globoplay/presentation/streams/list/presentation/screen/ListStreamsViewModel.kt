@@ -5,7 +5,6 @@ import br.com.globoplay.core.extensions.onError
 import br.com.globoplay.core.extensions.onSuccess
 import br.com.globoplay.presentation.streams.list.domain.useCase.GetGenreWithStreamsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
@@ -14,6 +13,10 @@ class ListStreamsViewModel(private val getGenreWithStreamsUseCase: GetGenreWithS
     BaseViewModel<ListStreamsUIState>() {
 
     override val _uiState = MutableStateFlow(ListStreamsUIState())
+
+    init {
+        getGenreWithStreams()
+    }
 
     fun getGenreWithStreams() {
         launch {

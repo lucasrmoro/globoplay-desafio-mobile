@@ -43,7 +43,7 @@ fun CommonAppScreen(
         contentColor = contentColor,
         contentWindowInsets = contentWindowInsets
     ) {
-        Box (modifier = Modifier.padding(it)){
+        Box(modifier = Modifier.padding(it)) {
             if (isScreenLoading) {
                 CommonLoading(modifier = loadingWidgetModifier)
             } else {

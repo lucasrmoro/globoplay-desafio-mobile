@@ -6,7 +6,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,10 +25,6 @@ fun ListStreamsScreen(
     onNavigateToStreamDetails: (Int) -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-
-    LaunchedEffect(key1 = Unit) {
-        viewModel.getGenreWithStreams()
-    }
 
     CommonAppScreen(
         isScreenLoading = uiState.isLoading
